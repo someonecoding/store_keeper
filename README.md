@@ -4,13 +4,10 @@ StoreKeeper is a service to help small stores control their sales, supplies, pro
 
 ## Installation
 ```
-python -m venv venv
-. venv/Scripts/activate
-pip install -r requirements.txt
+docker-compose build
 ```
 
 ## Run application
 ```
-. venv/Scripts/activate
-uvicorn app:app --relaod
+docker-compose up
 ```
