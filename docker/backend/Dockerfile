@@ -5,6 +5,8 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /backend/requirements.txt
 
-COPY ./backend /backend
+WORKDIR /backend
 
-RUN pip3 install -r ./backend/requirements.txt
+COPY . /backend
+
+RUN pip3 install -r ./requirements.txt
