@@ -1,8 +1,9 @@
 from fastapi import APIRouter
+from core.config import settings
 
 router = APIRouter(prefix='/user', tags=['user'])
 
 
 @router.get('')
 async def test():
-    return []
+    return [settings.DATABASE_URL]
