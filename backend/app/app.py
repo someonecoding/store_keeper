@@ -8,6 +8,7 @@ def init_routers(app: FastAPI) -> None:
 
 def create_app() -> FastAPI:
     app = FastAPI()
+
     init_routers(app=app)
 
     return app
