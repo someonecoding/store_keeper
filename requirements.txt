@@ -1,5 +1,6 @@
 alembic==1.8.1
 anyio==3.6.1
+asyncpg==0.26.0
 autoflake==1.4
 black==22.6.0
 cfgv==3.3.1
