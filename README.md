@@ -11,6 +11,10 @@ POSTGRES_DB=store_keeper
 POSTGRES_USER=store_keeper_admin
 POSTGRES_PASSWORD=qwerty123
 ```
+**backend.env**
+```
+SECRET_KEY=YOUR_SUPER_STRONG_SECRET_KEY
+```
 **Build docker images**
 ```
 docker-compose build
