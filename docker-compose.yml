@@ -17,6 +17,7 @@ services:
     container_name: fastapi
     env_file:
       - pg.env
+      - backend.env
     volumes:
       - ./backend:/backend
     ports:

@@ -2,6 +2,7 @@ from os import getenv
 
 
 class Settings:
+    # Database credentials
     DATABASE_NAME = getenv('POSTGRES_DB')
     DATABASE_USER = getenv('POSTGRES_USER')
     DATABASE_PASSWORD = getenv('POSTGRES_PASSWORD')
