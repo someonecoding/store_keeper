@@ -11,6 +11,6 @@ class Store(_database.Base):
     name = Column(String)
 
     user_id = Column(Integer, ForeignKey("users.id"))
-    user = relationship("User", back_populates="stores")
+    user = relationship("User", backref="stores")
 
     date_created = Column(DateTime, default=dt.datetime.utcnow)

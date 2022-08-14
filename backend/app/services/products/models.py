@@ -19,10 +19,10 @@ class StoreProduct(_database.Base):
     id = Column(Integer, primary_key=True, index=True)
 
     store_id = Column(Integer, ForeignKey("stores.id"))
-    store = relationship("Store", back_populates="products")
+    store = relationship("Store", backref="products")
 
     product_id = Column(Integer, ForeignKey("products.id"))
-    product = relationship("Product", back_populates="products")
+    product = relationship("Product", backref="products")
 
     total_products = Column(Integer, default=0)
     avg_price = Column(Float, default=0)
