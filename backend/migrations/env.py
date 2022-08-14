@@ -14,7 +14,7 @@ from core.db.database import Base
 # Add your models here for Base metadata scope
 from app.services.user.models import User
 from app.services.store.models import Store
-from app.services.products.models import Product, StoreProduct, AbstractProductTransaction, ProductSupply
+from app.services.products.models import Product, StoreProduct, AbstractProductTransaction, ProductSupply, ProductRealization
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
