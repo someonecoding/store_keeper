@@ -17,7 +17,7 @@ logic = UserLogic()
 
 @router.post('', status_code=status.HTTP_201_CREATED)
 async def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    
+
     try:
         valid = email_validator.validate_email(email=user.email)
         email = valid.email
@@ -31,7 +31,7 @@ async def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         raise HTTPException(
             status_code=400, detail=pwd_validation
         )
-    
+
     success, message = await logic.create_user(db=db, user=user)
 
     if success:
@@ -58,4 +58,3 @@ async def refresh_token(credentials: HTTPAuthorizationCredentials = Security(log
     refresh_token = credentials.credentials
     new_token = logic.auth_handler.refresh_token(refresh_token)
     return {'access_token': new_token}
-

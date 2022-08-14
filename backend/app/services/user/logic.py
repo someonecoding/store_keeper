@@ -15,7 +15,7 @@ class UserLogic:
         query = select(User).where(User.email == email)
         res = await db.execute(query)
         return res.scalars().first()
-    
+
     async def check_email(self, db: Session, email: str):
         if await self.get_user_by_email(db, email):
             return True
@@ -25,7 +25,7 @@ class UserLogic:
 
         if await self.check_email(db=db, email=user.email):
             return False, 'User with same email already exists.'
-        
+
         hashed_password = self.auth_handler.get_password_hash(user.password)
         user_obj = User(email=user.email, hashed_password=hashed_password)
 
