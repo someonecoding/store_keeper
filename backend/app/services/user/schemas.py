@@ -3,7 +3,7 @@ import pydantic
 
 
 class UserBase(pydantic.BaseModel):
-    email: str
+    email: str = 'asdasd@gma.com'
 
 
 class UserCreate(UserBase):

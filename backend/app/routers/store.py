@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from core.db.database import get_db
 from core.auth.handlers import AuthHandler
-from app.services.store import schemas, models, schemas
+from app.services.store import models, schemas
 from app.services.store.logic import StoreLogic
 
 
@@ -15,7 +15,7 @@ logic = StoreLogic()
 auth = AuthHandler()
 
 
-@router.post('')
+@router.post('', status_code=status.HTTP_201_CREATED)
 async def create_store(store: schemas.StoreCreate, credentials: HTTPAuthorizationCredentials = Security(auth.security), db: Session = Depends(get_db)):
     token = credentials.credentials
 

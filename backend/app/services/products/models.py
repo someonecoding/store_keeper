@@ -10,6 +10,9 @@ class Product(_database.Base):
     __tablename__ = "products"
 
     id = Column(Integer, primary_key=True, index=True)
+
+    user_id = Column(Integer, ForeignKey("users.id"))
+    user = relationship("User", backref="base_products")
     name = Column(String)
 
 
@@ -40,7 +43,7 @@ class AbstractProductTransaction(_database.Base):
 
     @declared_attr
     def product(cls):
-        return relationship("StoreProduct", back_populates=cls.relation_name)
+        return relationship("StoreProduct", backref=cls.relation_name)
 
     price = Column(Float)
     amount = Column(Integer)
